@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMenuButton = document.getElementById('close-menu');
     const overlayBackground = document.getElementById('overlay-background');
     const playMusicButton = document.getElementById('play-music');
+    const musicIcon = document.getElementById('music-icon');
     const backgroundMusic = document.getElementById('background-music');
 
     let offsetX = 0;
@@ -45,10 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
     playMusicButton.addEventListener('click', () => {
         if (backgroundMusic.paused) {
             backgroundMusic.play();
-            playMusicButton.textContent = 'Pause Music'; // Update button text
+            musicIcon.src = 'sound.png'; // Change icon to mute
         } else {
             backgroundMusic.pause();
-            playMusicButton.textContent = 'Play Music'; // Update button text
+            musicIcon.src = 'mute.png'; // Change icon to sound
         }
     });
 });

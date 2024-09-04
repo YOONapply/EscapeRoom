@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
 </head>
 <body>
+    <audio id="background-music" src="bgm.mp3" loop>
+        Your browser does not support the <code>audio</code> element.
+    </audio>
+
     <div class="background-container">
         <img id="background-image" src="room.webp" alt="Background Image">
         <button class="move-button" id="move-left">Left</button>
@@ -18,7 +22,6 @@
     <div class="menu-bar">
         <button class="select-button" id="select-button">Action</button>
     </div>
-    <!-- Background blur overlay -->
     <div class="overlay-background" id="overlay-background"></div>
     <div class="overlay-menu" id="overlay-menu">
         <button class="close-menu" id="close-menu">X</button>
@@ -31,36 +34,12 @@
             </div>
         </div>
     </div>
-    
-    <!-- Add a button to toggle the music -->
-    <button id="play-music">Play Music</button>
 
-    <audio id="background-music" src="bgm.mp3" loop>
-        Your browser does not support the <code>audio</code> element.
-    </audio>
+    <!-- Logo button to toggle music -->
+    <button class="logo-button" id="play-music">
+        <img id="music-icon" src="mute.png" alt="Music Icon">
+    </button>
 
     <script src="scripts/scripts.js"></script>
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const startButton = document.getElementById('select-button');
-            startButton.addEventListener('click', () => {
-                window.location.href = 'main.html';
-            });
-
-            // Add event listener to the play button
-            const playMusicButton = document.getElementById('play-music');
-            const backgroundMusic = document.getElementById('background-music');
-
-            playMusicButton.addEventListener('click', () => {
-                if (backgroundMusic.paused) {
-                    backgroundMusic.play();
-                    playMusicButton.textContent = 'Pause Music'; // Update button text
-                } else {
-                    backgroundMusic.pause();
-                    playMusicButton.textContent = 'Play Music'; // Update button text
-                }
-            });
-        });
-    </script> -->
 </body>
 </html>
