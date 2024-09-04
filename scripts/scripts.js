@@ -73,10 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
     submitPasswordButton.addEventListener('click', () => {
         const password = passwordInput.value;
         if (password === "2분당경영고IT과2") {
-            alert("자물쇠가 열렸습니다! 탈출할 수 있습니다.");
+            alert("탈출에 성공하였습니다!");
+            id = 1234
+            alert("해당 화면을 캡처한 후 부스로 와주세요!\n(CODE : " + id + ")");
             passwordDialog.style.display = 'none';
             overlayBackground.style.display = 'none';
-            
+            window.location.href = "win.html"
+
         } else {
             alert("암호가 틀렸습니다. 다시 시도하세요.");
             passwordInput.value = '';

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>축하합니다.</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: url('escape.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .message {
+            font-size: 48px;
+            color: white;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        /* 페이드 인 효과를 적용하기 위한 클래스 */
+        .fade-in {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">축하합니다.</div>
+
+    <script>
+        // 3초 후에 메시지가 서서히 나타나도록 설정
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('.message').classList.add('fade-in');
+            }, 3000);
+        };
+    </script>
+</body>
+</html>
