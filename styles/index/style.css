@@ -22,6 +22,7 @@ body {
     align-items: center;
     background-color: #1c1c1c; /* 어두운 배경 색상 */
     color: #e0e0e0; /* 밝은 텍스트 색상 */
+    overflow: hidden; /* 스크롤을 숨김 */
 }
 
 /* 메인 스크린 컨테이너 스타일 설정 */

@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlayMenu = document.getElementById('overlay-menu');
     const closeMenuButton = document.getElementById('close-menu');
     const overlayBackground = document.getElementById('overlay-background');
+    const playMusicButton = document.getElementById('play-music');
+    const backgroundMusic = document.getElementById('background-music');
 
     let offsetX = 0;
 
@@ -38,5 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
     closeMenuButton.addEventListener('click', () => {
         overlayMenu.style.display = 'none';
         overlayBackground.style.display = 'none'; // Hide blur background
+    });
+
+    playMusicButton.addEventListener('click', () => {
+        if (backgroundMusic.paused) {
+            backgroundMusic.play();
+            playMusicButton.textContent = 'Pause Music'; // Update button text
+        } else {
+            backgroundMusic.pause();
+            playMusicButton.textContent = 'Play Music'; // Update button text
+        }
     });
 });

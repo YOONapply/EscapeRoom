@@ -31,6 +31,36 @@
             </div>
         </div>
     </div>
+    
+    <!-- Add a button to toggle the music -->
+    <button id="play-music">Play Music</button>
+
+    <audio id="background-music" src="bgm.mp3" loop>
+        Your browser does not support the <code>audio</code> element.
+    </audio>
+
     <script src="scripts/scripts.js"></script>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const startButton = document.getElementById('select-button');
+            startButton.addEventListener('click', () => {
+                window.location.href = 'main.html';
+            });
+
+            // Add event listener to the play button
+            const playMusicButton = document.getElementById('play-music');
+            const backgroundMusic = document.getElementById('background-music');
+
+            playMusicButton.addEventListener('click', () => {
+                if (backgroundMusic.paused) {
+                    backgroundMusic.play();
+                    playMusicButton.textContent = 'Pause Music'; // Update button text
+                } else {
+                    backgroundMusic.pause();
+                    playMusicButton.textContent = 'Play Music'; // Update button text
+                }
+            });
+        });
+    </script> -->
 </body>
 </html>
