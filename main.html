@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Navigation</title>
+    <link rel="stylesheet" href="styles/main/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-container">
+        <img id="background-image" src="room.webp" alt="Background Image">
+        <button class="move-button" id="move-left">Left</button>
+        <button class="move-button" id="move-right">Right</button>
+    </div>
+    <div class="menu-bar">
+        <button class="select-button" id="select-button">Action</button>
+    </div>
+    <!-- Background blur overlay -->
+    <div class="overlay-background" id="overlay-background"></div>
+    <div class="overlay-menu" id="overlay-menu">
+        <button class="close-menu" id="close-menu">X</button>
+        <div class="menu-content">
+            <h2>할 수 있는 행동</h2><br>
+            <div class="menu-options">
+                <button class="menu-option">서랍 열기</button>
+                <button class="menu-option">종이 확인하기</button>
+                <button class="menu-option">상자 확인하기</button>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>

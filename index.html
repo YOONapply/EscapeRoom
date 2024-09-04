@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background Image Example</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Main Screen</title>
+    <link rel="stylesheet" href="styles/index/style.css">
 </head>
 <body>
-    <div class="background-container">
-        <img id="background-image" src="room.webp" alt="Background Image">
-        <button class="move-button" id="move-left">Left</button>
-        <button class="move-button" id="move-right">Right</button>
+    <div class="main-screen">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+        <button class="start-button" id="start-button">시작하기</button>
     </div>
-    <script src="scripts/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const startButton = document.getElementById('start-button');
+            startButton.addEventListener('click', () => {
+                window.location.href = 'main.html';
+            });
+        });
+    </script>
 </body>
 </html>
