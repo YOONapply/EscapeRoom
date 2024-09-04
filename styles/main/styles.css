@@ -14,6 +14,7 @@ html, body {
     padding: 0;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* 스크롤을 숨김 */
 }
 
 .background-container {

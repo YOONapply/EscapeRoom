@@ -1,36 +1,64 @@
-html, body {
+/* 기본 스타일 초기화 및 박스 사이징 설정 */
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden; 
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Nanum Brush Script", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.main-screen {
+h1{
+    font-size: 100px; 
+}
+/* 전체 body 스타일 설정 */
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    text-align: center;
+    background-color: #1c1c1c; /* 어두운 배경 색상 */
+    color: #e0e0e0; /* 밝은 텍스트 색상 */
 }
 
+/* 메인 스크린 컨테이너 스타일 설정 */
+.main-screen {
+    text-align: center;
+    background: rgba(28, 28, 28, 0.8); /* 반투명 어두운 배경 */
+    border-radius: 10px; /* 둥근 모서리 */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* 어두운 그림자 */
+}
+
+/* 로고 컨테이너 스타일 설정 */
 .logo-container {
     margin-bottom: 20px;
 }
 
+/* 로고 스타일 설정 */
 .logo {
-    max-width: 100%;
+    width: 150px; /* 로고의 폭 */
     height: auto;
+    border-radius: 10px; /* 둥근 모서리 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* 어두운 그림자 */
 }
 
+/* 시작 버튼 스타일 설정 */
 .start-button {
     padding: 15px 30px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     font-size: 18px;
+    color: #fff;
+    background-color: #333; /* 어두운 배경 색상 */
+    border: none;
+    border-radius: 5px; /* 둥근 모서리 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+.start-button:hover {
+    background-color: #555; /* 버튼 hover 시 배경 색상 */
+    transform: scale(1.05); /* 버튼 확대 효과 */
 }
