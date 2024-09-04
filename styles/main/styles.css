@@ -9,16 +9,17 @@
 }
 
 html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .background-container {
+    flex: 1; /* 남은 공간을 모두 차지 */
     position: relative;
     width: 100vw;
-    height: 80%;
     overflow: hidden;
 }
 
@@ -27,39 +28,33 @@ html, body {
     top: 0;
     left: 0;
     width: 150%;
-    height: auto;
+    height: 100%; /* 전체 높이 맞추기 */
+    object-fit: cover; /* 이미지가 컨테이너를 채우도록 */
     transition: transform 0.5s ease;
 }
 
-/* Darker menu bar with vintage paper texture */
 .menu-bar {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 20%;
+    height: 20vh; /* 화면 높이의 20% */
     display: flex;
     align-items: center;
-    background-image: url('path-to-your-vintage-paper-image.jpg'); /* 빈티지 종이 이미지 */
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
-    color: white; /* Text color */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Darker shadow */
-    z-index: 1001; /* Make sure it's above the blurred background */
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
 }
 
-/* Styling for move buttons and select button */
 .move-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.8); /* Darker button background */
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
-    border-radius: 5px; /* Rounded corners for buttons */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Button shadow */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 #move-left {
@@ -73,18 +68,17 @@ html, body {
 .select-button {
     height: 100%;
     flex-grow: 1;
-    background-color: rgba(0, 0, 0, 0.9); /* Even darker background for the select button */
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
     border: none;
     cursor: pointer;
     font-size: 30px;
     text-align: center;
     font-weight: bold;
-    border-radius: 5px; /* Rounded corners for button */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Button shadow */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-/* Menu overlay styling with backdrop-filter */
 .overlay-menu {
     position: fixed;
     top: 50%;
@@ -94,10 +88,10 @@ html, body {
     max-width: 400px;
     background-color: #2e2e2e;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly darker shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     display: none;
     padding: 20px;
-    z-index: 1000; /* Ensure it's below the menu bar */
+    z-index: 1000;
     text-align: center;
 }
 
@@ -107,13 +101,12 @@ html, body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.7); /* Darker background for blur effect */
-    backdrop-filter: blur(8px); /* Increased blur effect */
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
     display: none;
-    z-index: 999; /* Ensure it's below the menu and above other content */
+    z-index: 999;
 }
 
-/* Close button styling */
 .close-menu {
     position: absolute;
     top: 10px;
@@ -126,19 +119,17 @@ html, body {
 }
 
 .close-menu:hover {
-    color: #007bff; /* Color change on hover */
+    color: #007bff;
 }
 
-/* Menu content section styling */
 .menu-content {
     margin-top: 20px;
-    background-color: #2e2e2e; /* Dark gray background */
-    color: white; /* White text color */
-    padding: 20px; /* Padding for content */
-    border-radius: 8px; /* Rounded corners */
+    background-color: #2e2e2e;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
 }
 
-/* Menu options styling */
 .menu-options {
     display: flex;
     flex-direction: column;
@@ -146,7 +137,7 @@ html, body {
 }
 
 .menu-option {
-    background-color: black; /* Dark blue background */
+    background-color: black;
     color: white;
     border: none;
     padding: 10px;
@@ -157,5 +148,5 @@ html, body {
 }
 
 .menu-option:hover {
-    background-color: #00264d; /* Even darker blue on hover */
+    background-color: #00264d;
 }
