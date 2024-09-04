@@ -8,8 +8,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <style>
+        /* Custom dialog styles */
+        .dialog {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.78);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            display: none; /* Hidden by default */
+            z-index: 1002; /* Ensure it is above other elements */
+            width: 90%; /* Adjust the width here */
+            max-width: 900px; /* Set a maximum width */
+        }
+        .dialog p {
+            font-size: 30px;
+        }
+        .dialog input {
+            width: calc(100% - 22px); /* Adjust input width */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .dialog button {
+            padding: 10px 20px;
+            background-color:rgb(99, 14, 14);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .dialog button:hover {
+            background-color: #0056b3;
+        }
+        .dialog .cancel-btn {
+            background-color: #1e1d1d;
+        }
+        .dialog .cancel-btn:hover {
+            background-color: #999;
+        }
+        .smallmsg {
+            font-size: 15px;
+        }
+        .Pimg{
+            width: 70vw;
+            height: 70vw;
+        }
+    </style>
 </head>
 <body>
+    <!-- Existing HTML -->
     <audio id="background-music" src="bgm.mp3" loop>
         Your browser does not support the <code>audio</code> element.
     </audio>
@@ -28,14 +82,60 @@
         <div class="menu-content">
             <h2>할 수 있는 행동</h2><br>
             <div class="menu-options">
-                <button class="menu-option">서랍 열기</button>
-                <button class="menu-option">종이 확인하기</button>
-                <button class="menu-option">상자 확인하기</button>
+                <button class="menu-drawer" id="open-drawer">왼쪽 서랍 열기</button>
+                <button class="menu-paper">떨어져있는 종이 확인하기</button>
+                <button class="menu-box">오른쪽 상자 확인하기</button>
+                <button class="menu-escape">탈출하기</button>
             </div>
         </div>
     </div>
 
-    <!-- Logo button to toggle music -->
+    <!-- Custom dialog for password -->
+    <div class="dialog" id="password-dialog">
+        <p>자물쇠를 열어야 탈출할 수 있다.</p>
+        <input type="text" id="password-input" placeholder="암호를 입력하세요">
+        <button id="submit-password">시도하기</button>
+        <button class="cancel-btn" id="cancel-password">취소</button>
+    </div>
+
+    <!-- Custom dialog for drawer options -->
+    <div class="drawer-menu-bar" id="drawer-menu-dialog">
+        <button id="drawer1-option">종이 확인하기</button><br>
+        <button id="drawer2-option">종이 확인하기</button><br>
+        <button class="cancel-btn" id="close-drawer-menu">취소</button>
+    </div>
+
+    <!-- Custom dialogs for specific drawers -->
+    <div class="dialog" id="drawer1-dialog">
+        <ul>
+            Hint : icccccccci<br>(i = 정수, c = 문자)<br>
+        </ul>
+        <button class="cancel-btn" id="close-drawer1">닫기</button>
+    </div>
+
+    <!-- Custom dialog for paper options inside drawer 1 -->
+    <div class="drawer-menu-bar" id="paper-menu-dialog">
+        <button id="paper1-option">종이 1 확인</button><br>
+        <button id="paper2-option">종이 2 확인</button><br>
+        <button class="cancel-btn" id="close-paper-menu">취소</button>
+    </div>
+
+    <div class="dialog" id="drawer2-dialog">
+        <p>_분당경영고??과_</p>
+        <button class="cancel-btn" id="close-drawer2">닫기</button>
+    </div>
+
+    <div class="dialog" id="paper-dialog">
+        <p>당신은 정신을 잃고 깨어보니<br>어두운 방에 갇혀있습니다.</p>
+        <p>어서 방에서 탈출하세요...<br>좋은일이 생길겁니다..!</p><br>
+        <button class="cancel-btn" id="close-paper">닫기</button>
+    </div>
+
+    <div class="dialog" id="box-dialog">
+        <img class="Pimg" src="paper.png">
+        <button class="cancel-btn" id="close-box">닫기</button> Hint : 넘버패드
+    </div>
+
     <button class="logo-button" id="play-music">
         <img id="music-icon" src="mute.png" alt="Music Icon">
     </button>

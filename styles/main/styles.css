@@ -137,12 +137,26 @@ html, body {
     gap: 10px;
 }
 
-.menu-option {
+
+.menu-drawer,
+.menu-paper,
+.menu-box{
     background-color: black;
     color: white;
     border: none;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-escape{
+    background-color:rgb(99, 14, 14);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -167,3 +181,41 @@ html, body {
     width: 50px; /* Adjust size as needed */
     height: auto;
 }
+
+.drawer-menu-bar {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    display: none; /* Hidden by default */
+    padding: 20px;
+    z-index: 1002; /* Ensure it is above other elements */
+    text-align: center;
+}
+
+.drawer-menu-bar button {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    margin: 10px 0; /* Add margin between buttons */
+}
+
+.drawer-menu-bar button:hover {
+    background-color: #00264d;
+}
+
+.drawer-menu-bar p{
+    color: white;
+}
+
