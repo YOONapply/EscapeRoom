@@ -72,9 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     submitPasswordButton.addEventListener('click', () => {
         const password = passwordInput.value;
         if (password === "8분당경영고IT과8" || password === "8분당경영고it과8" || password === "8분당경영고It과8") {
-            alert("탈출에 성공하였습니다!");
-            id = 1234
-            alert("해당 화면을 캡처한 후 부스로 와주세요!\n(CODE : " + id + ")");
+            alert("좌물쇠가 열렸습니다!");
             passwordDialog.style.display = 'none';
             overlayBackground.style.display = 'none';
             window.location.href = "win.html"
