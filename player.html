@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room _ 분당경영고</title>
+    <style>
+        body {
+            font-family: 'Nanum Brush Script', cursive;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .main-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .logo-container h1 {
+            font-size: 48px;
+        }
+
+        input {
+            font-size: 20px;
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 250px;
+        }
+
+        button {
+            font-size: 22px;
+            padding: 12px 20px;
+            background-color: #1d0904;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .typing-effect {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-screen" id="main-screen">
+        <div class="logo-container">
+            <h1>닉네임을 입력해주세요.</h1>
+        </div>
+        <input type="text" id="nickname" placeholder="Ex) yoonapply">
+        <button type="submit" id="start-button">확인</button>
+    </div>
+
+    <div id="typing-container" class="hidden">
+        <p id="typing-effect" class="typing-effect"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const startButton = document.getElementById('start-button');
+            const mainScreen = document.getElementById('main-screen');
+            const typingContainer = document.getElementById('typing-container');
+            const typingEffect = document.getElementById('typing-effect');
+
+            const sentences = [
+                '당신은 정신을 잃고 깨어보니',
+                '어디인지 모를 방에 갇혀있습니다.',
+                '서둘러 방에서 탈출하세요...'
+            ];
+            let sentenceIndex = 0;
+            let charIndex = 0;
+            let currentSentence = '';
+            
+            function typeSentence() {
+                if (charIndex < currentSentence.length) {
+                    typingEffect.textContent += currentSentence.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeSentence, 100);
+                } else {
+                    sentenceIndex++;
+                    if (sentenceIndex < sentences.length) {
+                        setTimeout(() => {
+                            typingEffect.textContent = '';
+                            currentSentence = sentences[sentenceIndex];
+                            charIndex = 0;
+                            typeSentence();
+                        }, 1000);
+                    } else {
+                        setTimeout(() => {
+                            window.location.href = 'main.html';
+                        }, 2000);
+                    }
+                }
+            }
+
+            startButton.addEventListener('click', () => {
+                mainScreen.style.display = 'none'; 
+                typingContainer.classList.remove('hidden'); 
+
+                currentSentence = sentences[sentenceIndex];
+                typeSentence();
+            });
+        });
+    </script>
+</body>
+</html>

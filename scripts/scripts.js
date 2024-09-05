@@ -69,10 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayBackground.style.display = 'block';
     });
 
-    // Handle password submission
     submitPasswordButton.addEventListener('click', () => {
         const password = passwordInput.value;
-        if (password === "2분당경영고IT과2") {
+        if (password === "8분당경영고IT과8" || password === "8분당경영고it과8" || password === "8분당경영고It과8") {
             alert("탈출에 성공하였습니다!");
             id = 1234
             alert("해당 화면을 캡처한 후 부스로 와주세요!\n(CODE : " + id + ")");
@@ -86,20 +85,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Handle password dialog cancellation
     cancelPasswordButton.addEventListener('click', () => {
         passwordDialog.style.display = 'none';
         overlayBackground.style.display = 'none';
     });
 
-    // Open drawer menu
     const openDrawerButton = document.querySelector('#open-drawer');
     openDrawerButton.addEventListener('click', () => {
         drawerMenuDialog.style.display = 'block';
         overlayBackground.style.display = 'block';
     });
 
-    // Handle drawer menu option selection
     const drawer1Option = document.getElementById('drawer1-option');
     drawer1Option.addEventListener('click', () => {
         drawerMenuDialog.style.display = 'none';
@@ -114,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayBackground.style.display = 'block';
     });
 
-    // Handle paper and box dialogs
     const paperButton = document.querySelector('.menu-paper');
     paperButton.addEventListener('click', () => {
         paperDialog.style.display = 'block';
@@ -127,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayBackground.style.display = 'block';
     });
 
-    // Handle dialog cancellations
     const closeDrawer1Button = document.getElementById('close-drawer1');
     closeDrawer1Button.addEventListener('click', () => {
         drawer1Dialog.style.display = 'none';
@@ -152,14 +146,12 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayBackground.style.display = 'none';
     });
 
-    // Handle drawer menu cancellation
     const closeDrawerMenuButton = document.getElementById('close-drawer-menu');
     closeDrawerMenuButton.addEventListener('click', () => {
         drawerMenuDialog.style.display = 'none';
         overlayBackground.style.display = 'none';
     });
 
-    // Handle overlay background click to close all menus/dialogs
     overlayBackground.addEventListener('click', () => {
         overlayMenu.style.display = 'none';
         passwordDialog.style.display = 'none';

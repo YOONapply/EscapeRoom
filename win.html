@@ -27,8 +27,7 @@
             opacity: 0;
             transition: opacity 1s ease-in;
         }
-
-        /* 페이드 인 효과를 적용하기 위한 클래스 */
+        
         .fade-in {
             opacity: 1;
         }
@@ -38,7 +37,6 @@
     <div class="message">축하합니다.</div>
 
     <script>
-        // 3초 후에 메시지가 서서히 나타나도록 설정
         window.onload = function() {
             setTimeout(function() {
                 document.querySelector('.message').classList.add('fade-in');
